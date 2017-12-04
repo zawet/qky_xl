@@ -34,6 +34,7 @@ exports.xlDraw=function (s,e,fg,id,sjdata){
     for(var i=0;i<sjdata.length;i++){
         var d=sjdata[i];
         var thisdates=fun.getAll(d.startTime,d.endTime);//获取数据来的开始日期和结束日期间有什么日期
+        console.log(thisdates);
         for(var ti=0;ti<thisdates.length;ti++){
             $(".newday[date='"+thisdates[ti]+"']").attr("href","index_info.html?date="+thisdates[ti]).addClass("hasevent")
             //.append('<b id="'+id.id+'" title="'+id.cont+'"></b>')
@@ -64,6 +65,7 @@ exports.xlDraw=function (s,e,fg,id,sjdata){
                         weekHtml+='<td><a class="kong">&nbsp;</a></td>';
                     }else {
                         var dss='';if(thisday<10)dss="0"+thisday;else dss=thisday;
+                        var mss='';if(m<10)mss="0"+m;else mss=m;
                         var other="";
 
                         if(thisday==tod&&y==toy&&m==tom+1){
@@ -80,7 +82,7 @@ exports.xlDraw=function (s,e,fg,id,sjdata){
                         }else{
                             other='class="newday"';
                         }
-                        weekHtml+='<td><a date="'+y+'-'+m+'-'+thisday+'"  '+other+'><span>'+dss+'</span></a></td>';
+                        weekHtml+='<td><a date="'+y+'-'+mss+'-'+dss+'"  '+other+'><span>'+dss+'</span></a></td>';
                     }
                 }
             }

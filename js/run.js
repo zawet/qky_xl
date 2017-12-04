@@ -3,6 +3,7 @@ define(function(require,exports) {//dedine闭包
 	var qkyselect=require("./qkySelect.js");//下拉选择总成
 	var fun=require("./qkyFunH5.js");//函数总成
 	var cal=require("./cal.js");//日历总成
+	
 	exports.run=function(){
 		$(".qkyh5_header_main").qkySelect({
 			values:Data.xqQS.values,
@@ -16,7 +17,6 @@ define(function(require,exports) {//dedine闭包
 				cal.xlDraw(Data.se[i][0],Data.se[i][1],"-",$(".xlxr"),Data.sjData);	
 			}
 		});
-		
 		
 	}
 	exports.runCont=function(){
@@ -32,7 +32,4 @@ define(function(require,exports) {//dedine闭包
 		$(".today-date").html(xrdate);
 		fun.xrCont(Data.sjData,$(".qkyh5_main"),xrdate);	
 	}
-
-	
-
 });

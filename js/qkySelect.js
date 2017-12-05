@@ -27,7 +27,7 @@ define(function(require,exports) {//dedine闭包
 			'<div class="qky-select-optionbox">'+
 				'<div class="qso-center"></div>'+
 				'<div class="qso-swbox qsClear"></div>'+
-				'<div class="qso-but">确定</div>'+
+				'<div class="qso-but">确定</div><div class="qso-but close">取消</div>'+
 			'</div>'+
 		'</div>',
 		changefun:function(){}
@@ -90,7 +90,7 @@ define(function(require,exports) {//dedine闭包
 		op.vBox.click(function(){
 			$(this).parent().find(opt.oBox).toggleClass("open");
 			$(op.blurId).toggleClass("blur");
-			if(op.showMask)op.maskBox.show();
+			op.maskBox.show();
 		});
 				
 		/***以外区域点击 s**/
@@ -116,6 +116,7 @@ define(function(require,exports) {//dedine闭包
 			op.oBox.removeClass("open");
 			$(op.blurId).removeClass("blur");
 			op.maskBox.hide();
+			if(!$(this).hasClass("close"))
 			op.changefun(op.swBox.find(".swiper-container .swiper-slide-active a").html());
 		})		
 	}

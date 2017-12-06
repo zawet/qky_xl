@@ -19,8 +19,8 @@ define(function(require,exports) {//dedine闭包
 		maskBox:".qky-select-mask",
 		html:
 		'<div class="qky-select">'+
-			'<div class="qky-select-value">'+
-				'<label class="qsv-label"></label>'+
+			'<div class="qky-select-value ub ub-ac">'+
+				'<label class="qsv-label ub-f1"></label>'+
 				'<i class="qsv-i qkyicon">&#xe66f;</i>'+
 			'</div>'+
 			'<div class="qky-select-mask"></div>'+
@@ -58,10 +58,10 @@ define(function(require,exports) {//dedine闭包
 	function qsDraw(op){
 		for(var i=0;i<op.values.length;i++){
 			var swcWidth=(100/op.values.length);
-			op.vBox.find(".qsv-label").append('<span class="qsv-value value'+i+'">'+op.values[i][0]+'</span>');
+			op.vBox.find(".qsv-label").append('<span class="qsv-value dian3 value'+i+'">'+op.values[i][0]+'</span>');
 			op.swBox.append('<div class="swiper-container" id="'+op.Box.attr("id")+'options'+i+'" style="width:'+swcWidth+'%"><div class="swiper-wrapper"></div></div>')
 			for(var j=0;j<op.values[i].length;j++){
-				op.Box.find("#"+op.Box.attr("id")+"options"+i+" .swiper-wrapper").append("<div class='swiper-slide'><a class='option'>"+op.values[i][j]+"</a></div>");
+				op.Box.find("#"+op.Box.attr("id")+"options"+i+" .swiper-wrapper").append("<div class='swiper-slide'><a class='option dian3'>"+op.values[i][j]+"</a></div>");
 			}
 		}
 	}
